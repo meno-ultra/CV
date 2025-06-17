@@ -1,0 +1,354 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+body{
+    background: linear-gradient(#111,#222);
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+}
+
+body::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: red;
+    position: absolute;
+    z-index: -1;
+    clip-path: circle(35% at right 80%);
+}
+.container{
+    width: 90%;
+    max-width: 1400px;
+    min-height: 80%;
+    background: rgba(255,255,255,0.1);
+    border-radius: 20px;
+    overflow: hidden;
+    padding-bottom: 20px;
+    margin: 0 auto;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+    padding: 20px 0;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+nav .logo{
+    color: #fff;
+    text-decoration: none;
+    font-size: clamp(24px, 5vw, 32px);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+nav ul{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+nav ul li{
+    display: inline-block;
+    margin: 0 6px;
+}
+nav ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: clamp(14px, 2vw, 15px);
+    font-weight: 500;
+}
+nav ul li a:hover{
+    color: #e80202;
+}
+.content{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    min-height: 100%;
+    width: 90%;
+    margin: auto;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+.content .text{
+    color: #fff;
+    width: 60%;
+    min-width: 300px;
+}
+
+.section-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0;
+    justify-content: flex-start;
+}
+
+.section-btn {
+    background: transparent;
+    border: 2px solid #e80202;
+    color: #fff;
+    padding: clamp(8px, 2vw, 10px) clamp(15px, 3vw, 20px);
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: clamp(14px, 2vw, 16px);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+.section-btn:hover {
+    background: #e80202;
+    color: #fff;
+}
+
+.section-btn.active {
+    background: #e80202;
+    color: #fff;
+}
+
+.content .text h2{
+    font-size: clamp(30px, 5vw, 40px);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+.content .text h3{
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin: 20px 0 10px 0;
+    color: #e80202;
+    border-bottom: 2px solid #e80202;
+    padding-bottom: 5px;
+}
+.content .text p{
+    font-size: clamp(14px, 2vw, 15px);
+    line-height: 1.6;
+    margin: 10px 0;
+    letter-spacing: 1px;
+}
+.content .text strong{
+    color: #e80202;
+}
+.content .text .contact-info{
+    font-size: clamp(14px, 2vw, 16px);
+    margin-bottom: 20px;
+}
+.content .text .contact-info a{
+    color: #fff;
+    text-decoration: none;
+}
+.content .text .contact-info a:hover{
+    color: #e80202;
+}
+.content .text .section-content{
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+.content .text ul{
+    list-style-type: none;
+    padding-left: 20px;
+    margin: 10px 0;
+}
+.content .text ul li{
+    position: relative;
+    padding-left: 15px;
+    margin-bottom: 5px;
+    line-height: 1.4;
+    font-size: clamp(14px, 2vw, 15px);
+}
+.content .text ul li:before{
+    content: "•";
+    color: #e80202;
+    position: absolute;
+    left: 0;
+}
+.content .text a{
+    color: #fff;
+    text-decoration: none;
+}
+.content .text a:hover{
+    color: #e80202;
+}
+.content .image{
+    width: 35%;
+    min-width: 250px;
+    position: sticky;
+    top: 20px;
+    display: flex;
+    justify-content: center;
+}
+.content .image img{
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    background: transparent;
+    box-shadow: none;
+    object-fit: contain;
+}
+
+/* Large screens (TV, large monitors) */
+@media (min-width: 1400px) {
+    .container {
+        width: 80%;
+    }
+    .content {
+        width: 80%;
+    }
+    nav {
+        width: 80%;
+    }
+}
+
+/* Medium screens (laptops, desktops) */
+@media (min-width: 1024px) and (max-width: 1399px) {
+    .container {
+        width: 85%;
+    }
+    .content {
+        width: 85%;
+    }
+    nav {
+        width: 85%;
+    }
+}
+
+/* Small screens (tablets) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .container {
+        width: 90%;
+    }
+    .content {
+        width: 90%;
+    }
+    nav {
+        width: 90%;
+    }
+    .content .text {
+        width: 100%;
+    }
+    .content .image {
+        width: 100%;
+        position: relative;
+        top: 0;
+    }
+}
+
+/* Mobile devices */
+@media (max-width: 767px) {
+    .container {
+        width: 95%;
+    }
+    .content {
+        width: 95%;
+    }
+    nav {
+        width: 95%;
+        flex-direction: column;
+        text-align: center;
+    }
+    .content .text {
+        width: 100%;
+    }
+    .content .image {
+        width: 100%;
+        position: relative;
+        top: 0;
+    }
+    .section-buttons {
+        justify-content: center;
+    }
+    body::after {
+        clip-path: circle(50% at bottom);
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+    .container {
+        width: 100%;
+        border-radius: 0;
+    }
+    .content {
+        width: 100%;
+    }
+    nav {
+        width: 100%;
+    }
+    .section-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* === removing default button style ===*/
+.button {
+    margin: 0;
+    height: auto;
+    background: transparent;
+    padding: 0;
+    border: none;
+  }
+  
+  /* button styling */
+  .button {
+    --border-right: 6px;
+    --text-stroke-color: rgba(255,255,255,0.6);
+    --animation-color: #37FF8B;
+    --fs-size: 2em;
+    letter-spacing: 3px;
+    text-decoration: none;
+    font-size: var(--fs-size);
+    font-family: "Arial";
+    position: relative;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--text-stroke-color);
+  }
+  /* this is the text, when you hover on button */
+  .hover-text {
+    position: absolute;
+    box-sizing: border-box;
+    content: attr(data-text);
+    color: var(--animation-color);
+    width: 0%;
+    inset: 0;
+    border-right: var(--border-right) solid var(--animation-color);
+    overflow: hidden;
+    transition: 0.5s;
+    -webkit-text-stroke: 1px var(--animation-color);
+  }
+  /* hover */
+  .button:hover .hover-text {
+    width: 100%;
+    filter: drop-shadow(0 0 23px var(--animation-color))
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

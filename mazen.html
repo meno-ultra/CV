@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en,ar">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="mazen.css">
+    <title>Mazen Mahmoud - CV</title>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a class="logo" href="#"><h2>Mazen Mahmoud</h2></a>
+            <ul>
+                <li><a href="https://www.linkedin.com/in/mazen-mahmoud-87b583360/">LinkedIn</a></li>
+                <li><a href="https://github.com/meno-ultra">GitHub</a></li>
+            </ul>
+        </nav>
+        <div class="content">
+            <div class="text">
+                
+                <p class="contact-info">0100-266-7790 | <a href="mailto:m.mahmoud0179@nub.edu.eg">m.mahmoud0179@nub.edu.eg</a></p>
+                
+                <div class="section-buttons">
+                    <button class="section-btn" onclick="toggleSection('education')">Education</button>
+                    <button class="section-btn" onclick="toggleSection('experience')">Experience</button>
+                    <button class="section-btn" onclick="toggleSection('projects')">Projects</button>
+                    <button class="section-btn" onclick="toggleSection('skills')">Technical Skills</button>
+                    <button class="section-btn" onclick="toggleSection('certifications')">Certifications</button>
+                </div>
+
+                <div id="education" class="section-content">
+                    <p><strong>Nahda University</strong> - Beni Suef, EG<br>
+                    Bachelor of Engineering, Minor in Communications & Computers Engineering (in progress)<br>
+                    Oct 2023 – May 2028</p>
+                    <ul>
+                        <li>Level 1 Student</li>
+                        <li>GPA: 2.31</li>
+                    </ul>
+                </div>
+
+                <div id="experience" class="section-content">
+                    <p><strong>Electrical Technician – PCB & Circuit Design</strong><br>
+                    INFINITY Total-Com Solutions - Zahraa Elmaadi, Cairo<br>
+                    Aug 2021 – Present</p>
+                    <ul>
+                        <li>Troubleshot and repaired electronic boards and circuits for various consumer and industrial devices</li>
+                        <li>Designed PCB layouts using tools like EasyEDA, Flux, or Proteus for prototyping and small-scale projects</li>
+                        <li>Performed soldering and desoldering of electronic components (SMD and THT) with high precision</li>
+                        <li>Assembled, tested, and verified the functionality of electronic circuits to ensure performance</li>
+                        <li>Read and interpreted electrical schematics and component datasheets</li>
+                        <li>Modified and reworked existing PCBs to improve performance or fix design errors</li>
+                        <li>Designing and developing a company website using HTML, CSS, and JavaScript (in progress)</li>
+                    </ul>
+
+                    <p><strong>Tech Team Member</strong><br>
+                    IEEE NUB Student Branch - Beni Suef, EG<br>
+                    Nov 2023 – Present</p>
+                    <ul>
+                        <li>Contributed to technical events and collaborative student-led projects within the branch</li>
+                        <li>Served as Head of PCB & Circuit Design and Vice Head of the 3D Printing Sub-Team</li>
+                        <li>Led design and innovation initiatives, provided training, and oversaw development of hands-on technical projects</li>
+                    </ul>
+
+                    <p><strong>Python Automation Script Engineer</strong><br>
+                    College Friends' Startup - Cairo, EG<br>
+                    May 2024 – Present</p>
+                    <ul>
+                        <li>Creating and developing automation scripts using Python to improve workflows and streamline repetitive tasks, reducing time wastage by 70% and increasing profits by approximately 50%</li>
+                        <li>Writing efficient, maintainable code for various automation processes</li>
+                        <li>Testing scripts to ensure quality and performance</li>
+                        <li>Updating and enhancing existing scripts to meet evolving business needs</li>
+                        <li>Collaborating with technical teams to understand requirements and deliver custom software solutions</li>
+                    </ul>
+                </div>
+
+                <div id="projects" class="section-content">
+                    <p><strong>3D Printer (Graduation Project)</strong> | C, C++, Arduino<br>
+                    Oct 2022 – Oct 2023</p>
+                    <ul>
+                        <li>Designed and built a functional 3D printer for school graduation</li>
+                        <li>Managed hardware setup and calibration using Arduino-based control systems</li>
+                        <li>Showcased practical knowledge of CAD, stepper motors, and firmware tuning</li>
+                    </ul>
+                </div>
+
+                <div id="skills" class="section-content">
+                    <p><strong>Languages:</strong> Arabic (Native), English (C1 Advanced)<br>
+                    <strong>Programming Languages:</strong> Python, C/C++, JavaScript, HTML/CSS<br>
+                    <strong>Developer Tools:</strong> Git, VS Code, Visual Studio, PyCharm, Cursor, CodeBlocks, Arduino IDE<br>
+                    <strong>Autodesk Tools:</strong> AutoCAD, Fusion<br>
+                    <strong>Microsoft Tools:</strong> Word, Excel, PowerPoint<br>
+                    <strong>Circuit Design Tools:</strong> EasyEDA, Flux, Proteus<br>
+                    <strong>Soft Skills:</strong> Problem Solving, Effective Communication, Teamwork, Collaboration, Self-Motivated, Eager to Learn</p>
+                </div>
+
+                <div id="certifications" class="section-content">
+                    <p><strong>EF SET English:</strong> C1 Advanced (63/100) <a href="https://cert.efset.org/en/k2sVTN">Certificate link</a><br>
+                    Jun 2025</p>
+                </div>
+            </div>
+            <div class="image">
+                <img title="Mazen Mahmoud" src="logo.png" alt="Mazen Mahmoud">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initially hide all sections except education
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.section-content');
+            sections.forEach(section => {
+                if (section.id !== 'education') {
+                    section.style.display = 'none';
+                }
+            });
+        });
+
+        function toggleSection(sectionId) {
+            const sections = document.querySelectorAll('.section-content');
+            const buttons = document.querySelectorAll('.section-btn');
+            
+            // Hide all sections
+            sections.forEach(section => {
+                section.style.display = 'none';
+            });
+            
+            // Remove active class from all buttons
+            buttons.forEach(button => {
+                button.classList.remove('active');
+            });
+            
+            // Show selected section
+            document.getElementById(sectionId).style.display = 'block';
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html> 
