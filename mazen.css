@@ -14,6 +14,10 @@ body{
     padding: 20px 0;
 }
 
+html, body {
+    overflow-x: hidden; /* prevent horizontal scroll on small devices */
+}
+
 body::after{
     content: '';
     width: 100%;
@@ -253,16 +257,16 @@ nav ul li a:hover{
 /* Mobile devices */
 @media (max-width: 767px) {
     .container {
-        width: 95%;
+        width: 100%;
     }
     .content {
-        width: 95%;
+        width: 100%;
         flex-direction: column;
         align-items: center;
         gap: 20px;
     }
     nav {
-        width: 95%;
+        width: 100%;
         flex-direction: column;
         text-align: center;
     }
@@ -275,9 +279,11 @@ nav ul li a:hover{
     }
     .content .text {
         width: 100%;
+        min-width: auto; /* allow shrink on narrow screens */
     }
     .content .image {
         width: 100%;
+        min-width: auto; /* allow shrink on narrow screens */
         position: relative;
         top: 0;
         margin-top: 10px;
@@ -285,7 +291,7 @@ nav ul li a:hover{
         justify-content: center;
     }
     .content .image img{
-        max-width: 220px;
+        max-width: 200px;
     }
     .section-buttons {
         justify-content: center;
@@ -301,6 +307,7 @@ nav ul li a:hover{
     .container {
         width: 100%;
         border-radius: 0;
+        margin: 0 auto;
     }
     .content {
         width: 100%;
@@ -308,6 +315,9 @@ nav ul li a:hover{
     }
     nav {
         width: 100%;
+    }
+    nav ul li {
+        margin: 0 4px;
     }
     .content .text p,
     .content .text ul li,
@@ -321,6 +331,20 @@ nav ul li a:hover{
     }
     .section-buttons {
         width: 100%;
+    }
+}
+
+/* Very small devices (old phones, 320-360px) */
+@media (max-width: 360px) {
+    .section-btn {
+        font-size: 14px;
+        padding: 10px 12px;
+    }
+    nav .logo {
+        font-size: 22px;
+    }
+    .content .image img {
+        max-width: 160px;
     }
 }
 
