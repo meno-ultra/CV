@@ -14,10 +14,6 @@ body{
     padding: 20px 0;
 }
 
-html, body {
-    overflow-x: hidden; /* prevent horizontal scroll on small devices */
-}
-
 body::after{
     content: '';
     width: 100%;
@@ -70,7 +66,6 @@ nav ul li a{
     text-decoration: none;
     font-size: clamp(14px, 2vw, 15px);
     font-weight: 500;
-    padding: 6px 10px; /* improve tap target */
 }
 nav ul li a:hover{
     color: #e80202;
@@ -257,50 +252,30 @@ nav ul li a:hover{
 /* Mobile devices */
 @media (max-width: 767px) {
     .container {
-        width: 100%;
+        width: 95%;
     }
     .content {
-        width: 100%;
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-        padding-bottom: 20px;
+        width: 95%;
     }
     nav {
-        width: 100%;
+        width: 95%;
         flex-direction: column;
         text-align: center;
     }
-    nav ul {
-        gap: 6px;
-    }
-    nav ul li a {
-        font-size: 15px;
-        padding: 8px 12px;
-    }
     .content .text {
         width: 100%;
-        min-width: auto; /* allow shrink on narrow screens */
     }
     .content .image {
         width: 100%;
-        min-width: auto; /* allow shrink on narrow screens */
         position: relative;
         top: 0;
-        margin-top: 10px;
-        margin-bottom: 10px;
-        display: flex;
-        justify-content: center;
-    }
-    .content .image img{
-        width: 100%;
-        max-width: 50vw; /* scale with viewport on phones */
-        height: auto;
     }
     .section-buttons {
         justify-content: center;
     }
-    body::after { display: none; } /* hide decorative semicircle on phones */
+    body::after {
+        clip-path: circle(50% at bottom);
+    }
 }
 
 /* Small mobile devices */
@@ -308,45 +283,16 @@ nav ul li a:hover{
     .container {
         width: 100%;
         border-radius: 0;
-        margin: 0 auto;
     }
     .content {
         width: 100%;
-        gap: 16px;
     }
     nav {
         width: 100%;
     }
-    nav ul li {
-        margin: 0 4px;
-    }
-    .content .text p,
-    .content .text ul li,
-    .content .text .contact-info {
-        line-height: 1.7;
-    }
     .section-btn {
         width: 100%;
         text-align: center;
-        padding: 12px 16px;
-    }
-    .section-buttons {
-        width: 100%;
-    }
-    .content .image img { max-width: 60vw; }
-}
-
-/* Very small devices (old phones, 320-360px) */
-@media (max-width: 360px) {
-    .section-btn {
-        font-size: 14px;
-        padding: 10px 12px;
-    }
-    nav .logo {
-        font-size: 22px;
-    }
-    .content .image img {
-        max-width: 160px;
     }
 }
 
