@@ -264,6 +264,7 @@ nav ul li a:hover{
         flex-direction: column;
         align-items: center;
         gap: 20px;
+        padding-bottom: 20px;
     }
     nav {
         width: 100%;
@@ -287,19 +288,19 @@ nav ul li a:hover{
         position: relative;
         top: 0;
         margin-top: 10px;
+        margin-bottom: 10px;
         display: flex;
         justify-content: center;
     }
     .content .image img{
-        max-width: 200px;
+        width: 100%;
+        max-width: 50vw; /* scale with viewport on phones */
+        height: auto;
     }
     .section-buttons {
         justify-content: center;
     }
-    body::after {
-        clip-path: circle(45% at bottom);
-        opacity: 0.4;
-    }
+    body::after { display: none; } /* hide decorative semicircle on phones */
 }
 
 /* Small mobile devices */
@@ -332,6 +333,7 @@ nav ul li a:hover{
     .section-buttons {
         width: 100%;
     }
+    .content .image img { max-width: 60vw; }
 }
 
 /* Very small devices (old phones, 320-360px) */
