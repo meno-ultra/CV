@@ -21,11 +21,11 @@
                 <p class="contact-info">0100-266-7790 | <a href="mailto:m.mahmoud0179@nub.edu.eg">m.mahmoud0179@nub.edu.eg</a></p>
                 
                 <div class="section-buttons">
-                    <button class="section-btn" onclick="toggleSection('education')">Education</button>
-                    <button class="section-btn" onclick="toggleSection('experience')">Experience</button>
-                    <button class="section-btn" onclick="toggleSection('projects')">Projects</button>
-                    <button class="section-btn" onclick="toggleSection('skills')">Technical Skills</button>
-                    <button class="section-btn" onclick="toggleSection('certifications')">Certifications</button>
+                    <button class="section-btn" onclick="toggleSection('education', event)">Education</button>
+                    <button class="section-btn" onclick="toggleSection('experience', event)">Experience</button>
+                    <button class="section-btn" onclick="toggleSection('projects', event)">Projects</button>
+                    <button class="section-btn" onclick="toggleSection('skills', event)">Technical Skills</button>
+                    <button class="section-btn" onclick="toggleSection('certifications', event)">Certifications</button>
                 </div>
 
                 <div id="education" class="section-content">
@@ -84,13 +84,41 @@
                 </div>
 
                 <div id="skills" class="section-content">
-                    <p><strong>Languages:</strong> Arabic (Native), English (C1 Advanced)<br>
-                    <strong>Programming Languages:</strong> Python, C/C++, JavaScript, HTML/CSS<br>
-                    <strong>Developer Tools:</strong> Git, VS Code, Visual Studio, PyCharm, Cursor, CodeBlocks, Arduino IDE<br>
-                    <strong>Autodesk Tools:</strong> AutoCAD, Fusion<br>
-                    <strong>Microsoft Tools:</strong> Word, Excel, PowerPoint<br>
-                    <strong>Circuit Design Tools:</strong> EasyEDA, Flux, Proteus<br>
-                    <strong>Soft Skills:</strong> Problem Solving, Effective Communication, Teamwork, Collaboration, Self-Motivated, Eager to Learn</p>
+                    <h3 class="underlined">Technical Skills</h3>
+                    <div class="skills-grid">
+                        <div class="skill-col">
+                            <h4>Languages</h4>
+                            <ul>
+                                <li>Arabic (Native)</li>
+                                <li>English (C1 Advanced)</li>
+                            </ul>
+                            <h4>Programming</h4>
+                            <ul>
+                                <li>Python</li>
+                                <li>C / C++</li>
+                                <li>JavaScript</li>
+                                <li>HTML / CSS</li>
+                            </ul>
+                        </div>
+                        <div class="skill-col">
+                            <h4>Tools & IDEs</h4>
+                            <ul>
+                                <li>Git, VS Code, Visual Studio</li>
+                                <li>PyCharm, Arduino IDE, Code::Blocks</li>
+                            </ul>
+                            <h4>Design & CAD</h4>
+                            <ul>
+                                <li>AutoCAD, Fusion 360</li>
+                                <li>EasyEDA, Flux, Proteus</li>
+                            </ul>
+                            <h4>Soft Skills</h4>
+                            <ul>
+                                <li>Problem Solving</li>
+                                <li>Teamwork & Communication</li>
+                                <li>Self-motivated, Fast Learner</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
 
                 <div id="certifications" class="section-content">
@@ -115,7 +143,7 @@
             });
         });
 
-        function toggleSection(sectionId) {
+        function toggleSection(sectionId, ev) {
             const sections = document.querySelectorAll('.section-content');
             const buttons = document.querySelectorAll('.section-btn');
             
@@ -130,10 +158,11 @@
             });
             
             // Show selected section
-            document.getElementById(sectionId).style.display = 'block';
+            const el = document.getElementById(sectionId);
+            if (el) el.style.display = 'block';
             
-            // Add active class to clicked button
-            event.target.classList.add('active');
+            // Add active class to clicked button (if event provided)
+            if (ev && ev.currentTarget) ev.currentTarget.classList.add('active');
         }
     </script>
 </body>
